@@ -35,20 +35,19 @@
 // Uncomment to enable, for some a value > 1 may be assigned, if so the default value is shown.
 
 /*
-              Plugin: | ETHERNET¹ | SDCARD¹ | KEYPAD | EEPROM | N_AXIS |
+              Plugin: | ETHERNET  | SDCARD  | KEYPAD | EEPROM | N_AXIS |
 ----------------------|-----------|---------|--------|--------|--------|
-BOARD_T40X101         | no        | no      | yes    | yes³   | max 4  |
-BOARD_T41U5XBB        | yes       | yes     | yes    | yes³   | max 5  |
+BOARD_T40X101         | no        | no      | yes    | yes    | max 4  |
+BOARD_T41U5XBB        | yes       | yes     | yes    | yes    | max 5  |
 BOARD_T41BB5X_PRO     | yes       | yes     | yes    | yes    | max 5  |
-BOARD_CNC_BOOSTERPACK | yes²      | yes     | yes    | yes    | max 3  |
+BOARD_CNC_BOOSTERPACK | yes       | yes     | yes    | yes    | max 3  |
 BOARD_GRBLHAL2000     | yes       | yes     | yes    | yes    | max 5  |
 
-¹ Teensy 4.1 only
-² External magjack.
-³ EEPROM is optional and must be added to the board.
+- Teensy 4.1 only
+- External magjack.
+- EEPROM is optional and must be added to the board.
 
 N_AXIS has a default value of 3, edit grbl\config.h to increase.
-
 */
 
 #define USB_SERIAL_CDC      2 // 1 for Arduino class library and 2 for PJRC C library. Comment out to use UART communication.
@@ -60,7 +59,7 @@ N_AXIS has a default value of 3, edit grbl\config.h to increase.
 //#define WEBUI_ENABLE        1 // Enable ESP3D-WEBUI plugin along with networking and SD card plugins.
 //#define WEBUI_INFLASH       1 // Store WebUI files in flash instead of on SD card.
 //#define ETHERNET_ENABLE     1 // Ethernet streaming. Enables networking plugin.
-//#define SDCARD_ENABLE       1 // Run gcode programs from SD card, enables sdcard plugin.
+#define SDCARD_ENABLE       1   // Run gcode programs from SD card, enables sdcard plugin.
 //#define QEI_ENABLE          1 // Enable quadrature encoder interfaces. Max value is 1. Requires encoder plugin.
 //#define MPG_ENABLE          1 // Enable MPG interface. Requires serial port and one handshake pin unless
                                 // KEYPAD_ENABLE is set to 2 when mode switching is done by the CMD_MPG_MODE_TOGGLE (0x8B)
@@ -80,14 +79,14 @@ N_AXIS has a default value of 3, edit grbl\config.h to increase.
 //#define ESTOP_ENABLE        0 // When enabled only real-time report requests will be executed when the reset pin is asserted.
                                 // Note: if left commented out the default setting is determined from COMPATIBILITY_LEVEL.
 
-// If the selected board map supports more than three motors ganging and/or auto-squaring
-// of axes can be enabled here.
+// If the selected board map supports more than three motors ganging and/or auto-squaring of axes can be enabled here.
 //#define X_GANGED            1
 //#define X_AUTO_SQUARE       1
 //#define Y_GANGED            1
 //#define Y_AUTO_SQUARE       1
 //#define Z_GANGED            1
 //#define Z_AUTO_SQUARE       1
+
 // For ganged axes the limit switch input (if available) can be configured to act as a max travel limit switch.
 // NOTE: If board map already has max limit inputs defined this configuration will be ignored.
 //#define X_GANGED_LIM_MAX    1
